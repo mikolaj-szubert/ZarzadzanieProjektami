@@ -1,0 +1,86 @@
+﻿@model List<Microsoft.AspNetCore.Identity.IdentityUser>
+@inject Microsoft.AspNetCore.Identity.UserManager<Microsoft.AspNetCore.Identity.IdentityUser> UserManager
+
+<h2>Lista użytkowników</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nazwa Użytkownika</th>
+            <th>Email</th>
+            <th>Weryfikacja Dwuetapowa</th>
+            <th>Rola</th>
+            <th>Czynność</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.TwoFactorEnabled</td>
+                <td>
+                    <select class="form-control" onchange="updateUserRole('@user.Id', this.value)">
+                        @if(await UserManager.IsInRoleAsync(user, "Admin"))
+                        {
+                            <option value="User">Użytkownik</option>
+                            <option value="Mod">Moderator</option>
+                            <option value="Admin" selected>Admin</option>
+                        }
+                        else if (await UserManager.IsInRoleAsync(user, "Mod"))
+                        {
+                            <option value="User">Użytkownik</option>
+                            <option value="Mod" selected>Moderator</option>
+                            <option value="Admin">Admin</option>
+                        }
+                        else
+                        {
+                            <option value="User" selected>Użytkownik</option>
+                            <option value="Mod">Moderator</option>
+                            <option value="Admin">Admin</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <button class="btn btn-danger" onclick="deleteUser('@user.Id')">Usuń konto</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        function updateUserRole(userId, selectedRole) {
+            fetch(`/Users/UpdateUserRole?userId=${userId}&selectedRole=${selectedRole}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Błąd:', error));
+        }
+
+        function deleteUser(userId) {
+            if (confirm("Czy na pewno chcesz usunąć to konto?")) {
+                fetch(`/Users/DeleteUser?userId=${userId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        window.location.reload();
+                    })
+                    .catch(error => console.error('Błąd:', error));
+            }
+        }
+    </script>
+}

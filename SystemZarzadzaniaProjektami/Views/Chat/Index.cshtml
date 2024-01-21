@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Komunikator";
+}
+<div class="text-center">
+    <p class="h-75 text-start" id="messagesList"></p>
+    <div class="w-100 h-auto container" style="position:absolute;bottom:0;padding-bottom:10vh;">
+        <div class="input-group">
+            <input type="hidden" id="userInput" value="@User.Identity?.Name" />
+            <input type="text" class="form-control" id="messageInput" />
+            <div class="input-group-append">
+                <input type="button" class="btn btn-primary" id="sendButton" value="Wyślij" />
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

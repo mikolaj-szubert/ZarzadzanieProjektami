@@ -80,6 +80,7 @@ namespace SystemZarzadzaniaProjektami.Controllers
             {
                 return NotFound();
             }
+            ViewData["DeadlineFormatted"] = project.Deadline.ToString("yyyy-MM-dd");
             return View(project);
         }
 
@@ -116,6 +117,7 @@ namespace SystemZarzadzaniaProjektami.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DeadlineFormatted"] = project.Deadline.ToString("yyyy-MM-dd");
             return View(project);
         }
 

@@ -6,7 +6,7 @@
 
 <h1>Projekty</h1>
 
-@if (User.IsInRole("Mod"))
+@if (User.IsInRole("Mod") || User.IsInRole("Admin"))
 {
     <p>
         <a asp-action="Create">Stwórz Nowy</a>
@@ -41,7 +41,7 @@
             </td>
                 <td>
                 <a asp-action="Details" asp-route-id="@item.Id">Szczegóły</a>
-                    @if (User.IsInRole("Mod"))
+                @if (User.IsInRole("Mod") || User.IsInRole("Admin"))
                 {
                     <a> | </a><a asp-action="Edit" asp-route-id="@item.Id">Edytuj</a>
                     <a> | </a><a asp-action="Delete" asp-route-id="@item.Id">Usuń</a>

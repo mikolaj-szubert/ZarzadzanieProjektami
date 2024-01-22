@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SystemZarzadzaniaProjektami.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    //Usuń "//" poniżej
+    [Authorize(Roles = "Admin")]
+    //Usuń "//" powyżej
     public class UsersController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;

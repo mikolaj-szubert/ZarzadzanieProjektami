@@ -1,0 +1,44 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x
+    - name: Install EntityFrameworkAdapter for QuickGrid
+      run: dotnet add package Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter --version 8.0.1
+    - name: Install EntityFrameworkCore for Diagnostic
+      run: dotnet add package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore --version 8.0.0
+    - name: Install EntityFrameworkCore for Identity
+      run: dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 8.0.1
+    - name: Install UI for Identity
+      run: dotnet add package Microsoft.AspNetCore.Identity.UI --version 8.0.1
+    - name: Install Sqlite for EntityFrameworkCore
+      run: dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 8.0.1
+    - name: Install SqlServer for EntityFrameworkCore
+      run: dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 8.0.1
+    - name: Install Tools for EntityFrameworkCore
+      run: dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.1
+    - name: Install Design for CodeGeneration
+      run: dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 8.0.0
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal

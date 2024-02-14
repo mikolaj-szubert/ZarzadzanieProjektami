@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
+    - name: Change directory to project folder
+      run: cd ZarzadzanieProjektami
     - name: Install EntityFrameworkAdapter for QuickGrid
       run: dotnet add package Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter --version 8.0.1
     - name: Install EntityFrameworkCore for Diagnostic

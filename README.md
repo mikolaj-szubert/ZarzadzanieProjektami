@@ -14,6 +14,6 @@ In addition, any user, even those not logged in, can view projects.
 
 In case of error with migrations:
 1. Go to Tools -> NuGet package manager -> Package manager console.
-2. Type:
-Add-Migration "Name of migration"
-Update-Database
+2. Type:  
+Add-Migration "Name of migration"  
+Update-Database  

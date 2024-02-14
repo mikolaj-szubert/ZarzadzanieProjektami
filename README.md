@@ -12,7 +12,7 @@ In addition, any user, even those not logged in, can view projects.
 2. Open it with Visual Studio 2022 by double clicking "ZarzadzanieProjektami.sln".
 3. Run by clicking "https" at the top bar.
 
-In case of error with migrations:
+In case of error with migrations:  
 1. Go to Tools -> NuGet package manager -> Package manager console.
 2. Type:  
 Add-Migration "Name of migration"  

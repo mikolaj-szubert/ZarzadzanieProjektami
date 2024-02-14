@@ -17,8 +17,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
-    - name: Set project directory
-      run: echo "::set-env name=PROJECT_DIR::$(pwd)/ZarzadzanieProjektami/ZarzadzanieProjektami"
+    - name: Create Environment File
+      run: echo "PROJECT_DIR=$(pwd)/ZarzadzanieProjektami/ZarzadzanieProjektami" >> $GITHUB_ENV
     - name: Install EntityFrameworkAdapter for QuickGrid
       run: dotnet add package Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter --version 8.0.1
       working-directory: ${{ env.PROJECT_DIR }}

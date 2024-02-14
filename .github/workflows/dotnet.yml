@@ -17,10 +17,11 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
-    - name: Change directory to project folder
-      run: dir
+    - name: Set project directory
+      run: echo "::set-env name=PROJECT_DIR::$(pwd)/ZarzadzanieProjektami/ZarzadzanieProjektami"
     - name: Install EntityFrameworkAdapter for QuickGrid
       run: dotnet add package Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter --version 8.0.1
+      working-directory: ${{ env.PROJECT_DIR }}
     - name: Install EntityFrameworkCore for Diagnostic
       run: dotnet add package Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore --version 8.0.0
     - name: Install EntityFrameworkCore for Identity

@@ -1,7 +1,6 @@
+# Project Manager
 [![.NET](https://github.com/mikolaj-szubert/ZarzadzanieProjektami/actions/workflows/dotnet.yml/badge.svg)](https://github.com/mikolaj-szubert/ZarzadzanieProjektami/actions/workflows/dotnet.yml) [![CodeQL](https://github.com/mikolaj-szubert/ZarzadzanieProjektami/actions/workflows/github-code-scanning/codeql/badge.svg?branch=master)](https://github.com/mikolaj-szubert/ZarzadzanieProjektami/actions/workflows/github-code-scanning/codeql)  
 [![Typing SVG](https://ghrmt.vercel.app?font=Times+New+Roman&weight=900&size=13&duration=3000&pause=100&color=999999&background=0D111700&multiline=true&repeat=false&random=false&width=350&height=33&lines=Simple+solutions+for+complicated+problems+are+always+the+best.)](https://git.io/typing-svg)
-# Project Manager
-
 ## Roles  
 | Role | Capabilities |
 | ---|---|

@@ -26,6 +26,8 @@ Add-Migration "Name of migration"
 Update-Database  
 ```  
 ## Contributing  
-If you have suggestions for how Project Manager could be improved, or want to report a bug, open an issue! All and any contributions are appreciated. Just bear in mind that there is [Code of Conduct](/CODE_OF_CONDUCT.md). 
+If you have suggestions for how Project Manager could be improved, or want to report a bug, open an issue!  
+All and any contributions are appreciated.  
+Please remember that there is a [Code of Conduct](/CODE_OF_CONDUCT.md) that must be adhered to.
 ## License  
-[The Unlicense](/LICENSE.txt) © 2024 [mikolaj-szubert](https://github.com/mikolaj-szubert)
+[The Unlicense](/LICENSE.txt) © 2024 [mikolaj-szubert](../../..)

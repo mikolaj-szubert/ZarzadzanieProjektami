@@ -6,8 +6,8 @@
 | ---|---|
 | Unlogged user | Viewing projects |
 | Logged in user | Viewing projects, viewing and managing tasks, chatting |
-| Moderator | Viewing projects, viewing and managing tasks, project management, chatting |
-| Admin | Viewing projects, viewing and managing tasks, project management, chatting, user role management |
+| Moderator | Viewing projects, viewing and managing tasks, chatting, project management |
+| Admin | Viewing projects, viewing and managing tasks, chatting, project management, user role management |
 
 ## Requirements:
 - [Visual Studio 2022](https://visualstudio.microsoft.com/pl/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&passive=false&cid=2030)

@@ -5,9 +5,9 @@
 | Role | Capabilities |
 | ---|---|
 | Unlogged user | Viewing projects |
-| Logged in user | Viewing projects, managing tasks in a project |
-| Moderator | Viewing projects, task management in a project, project management |
-| Admin | Viewing projects, task management in a project, project management, user role management |
+| Logged in user | Viewing projects, viewing and managing tasks, chatting |
+| Moderator | Viewing projects, viewing and managing tasks, project management, chatting |
+| Admin | Viewing projects, viewing and managing tasks, project management, chatting, user role management |
 
 ## Requirements:
 - [Visual Studio 2022](https://visualstudio.microsoft.com/pl/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&passive=false&cid=2030)
